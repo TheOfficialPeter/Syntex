@@ -4,4 +4,4 @@
 
 # Syntex
 
-Welcome to the official **Syntex** repository. Syntex is an open source Data Anaylitics Platform focused on providing database insights.
+Welcome to the official **Syntex** repository. an Open source Database Administration and Analytics Panel.

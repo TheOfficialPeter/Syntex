@@ -1,7 +1,12 @@
-![image](https://github.com/TheOfficialPeter/Syntex/assets/57006688/623230cd-cb35-458d-a881-ae1476c0a18c)
-<br/>
-**Branding is subject to change in near future**
+<p align="center">
+  <img src="https://i.imgur.com/UrYXpHG.png">
+</p>
 
-# Syntex
+<h1 align="center">Syntex</h1>
 
-Welcome to the official **Syntex** repository. an Open source Database Administration and Analytics Panel.
+<b>Syntex</b> is an Open Source Database Analytics and Administration Web Panel.
+- 📊 *Syntex* allows users to view database statistics ( Reads/m, Write/m, Connections, Recent Changes ).
+- 🎨 *Syntex* includes a wide range of customization choices to make your data appear its best.
+- 🌐 The installation guide for *Syntex* will make installation and hosting simple and straightforward so you can get started right away.
+
+### **Currently under maintenance**

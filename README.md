@@ -1,4 +1,4 @@
-![image](https://github.com/TheOfficialPeter/Syntex/assets/57006688/e395a6b6-6c08-4c4b-839d-ecbd5fc0744a)
+![image](https://github.com/TheOfficialPeter/Syntex/assets/57006688/3e9deb01-22cc-4bf0-9514-396dcf2aaf2e)
 <br/>
 **Branding is subject to change in near future**
 

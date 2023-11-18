@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://cdn.jsdelivr.net 'unsafe-inline'">
+    <link rel="stylesheet" href="main.css" />
+
+    <title>Syntex</title>
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
+    <h1 class="title">Overview</h1>
+
+    <div class="Drawer">
+        <div class="logo">
+            <img style="display: inline;" src="logo.svg" alt="logo">
+        </div>
+        <div class="navItem first active">
+            <img src="./assets/Home.svg" alt="Home Icon">
+            <h1>Dashboard</h1>
+        </div>
+        <div class="navItem">
+            <img src="./assets/Tiktok.svg" alt="Settings Icon">
+            <h1>Tiktok Trends</h1>
+        </div>
+        <div class="navItem">
+            <img src="./assets/YouTube.svg" alt="Settings Icon">
+            <h1>Youtube Trends</h1>
+        </div>
+        <div class="navItem">
+            <img src="./assets/Settings.svg" alt="Settings Icon">
+            <h1>Settings</h1>
+        </div>
+    </div>
+
+    <div class="stats">
+        <div class="statsItem">
+            <h1 id="title">Current Playing</h1>
+            <div id="bar"></div>
+            <h1 id="number">50k</h1>
+        </div>
+
+        <div class="statsItem">
+            <h1 id="title">Game Version</h1>
+            <div id="bar"></div>
+            <h1 id="number">1.32</h1>
+        </div>
+    </div>
+
+    <div class="gameStats">
+        <h1 id="title">Trending Analysis</h1>
+        <div id="bar"></div>
+        <div id="chart"></div>
+    </div>
+
+    <script src="chart.js"></script>
+</body>
+
+</html>

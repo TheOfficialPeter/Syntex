@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://cdn.jsdelivr.net 'unsafe-inline'">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://cdn.jsdelivr.net https://vginsights.com https://www.roblox.com 'unsafe-inline'">
     <link rel="stylesheet" href="main.css" />
 
     <title>Syntex</title>
@@ -17,10 +17,12 @@
             <h1 id="title">Please provide one of these</h1>
 
             <h1 id="inputLabel">Steam Game ID</h1>
-            <input type="text" id="inputBox">
+            <input type="text" class="Steam">
 
             <h1 id="inputLabel">Roblox Game ID</h1>
-            <input type="text" id="inputBox">
+            <input type="text" class="Roblox">
+
+            <div id="loading"></div>
 
             <div id="button">Connect</div>
         </div>

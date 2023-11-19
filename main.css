@@ -283,7 +283,6 @@ body {
 }
 
 .blur {
-    display: none;
     position: absolute;
 
     margin: 0;
@@ -393,7 +392,28 @@ body {
     line-height: normal;
 }
 
-.formPopup #inputBox {
+.Roblox {
+    margin-left: 30px;
+    margin-top: 5px;
+
+    height: 20px;
+    width: 200px;
+
+    outline: none;
+    border: none;
+    background: transparent;
+
+    border-bottom: 2px solid black;
+
+    color: #1e1e1e;
+    font-family: 'Inter';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.Steam {
     margin-left: 30px;
     margin-top: 5px;
 
@@ -435,4 +455,31 @@ body {
     font-style: normal;
     font-weight: 600;
     line-height: 45px;
+}
+
+@keyframes spin {
+    50% {
+        rotate: 180deg;
+    }
+    100% {
+        rotate: 360deg;
+    }
+}
+
+#loading {
+    display: none;
+    position: absolute;
+
+    width: 100px;
+    height: 100px;
+
+    top: calc(50% - 50px);
+    left: calc(50% - 50px);
+
+    animation-name: spin;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+
+    background-image: url('assets/Loading.svg');
 }

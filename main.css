@@ -219,12 +219,26 @@ body {
     height: 200px;
 }
 
+.status {
+    position: absolute;
+
+    background-color: #65FE87;;
+
+    width: 5px;
+    height: 5px;
+    border-radius: 50px;
+
+    margin: 0;
+    right: 25px;
+    top: 35px; 
+}
+
 .gameTitle {
     position: absolute;
 
     margin: 0;
     top: 30px;
-    right: 75px;
+    right: 40px;
 
     color: #000;
     text-align: right;
@@ -256,7 +270,7 @@ body {
     position: absolute;
 
     margin: 0;
-    top: 70px;
+    top: 60px;
     right: 25px;
 
     display: none;
@@ -270,7 +284,7 @@ body {
 
     border-radius: 10px;
     background: #FFF;
-    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.08);
 
     color: #F00;
     font-family: 'Cabin';

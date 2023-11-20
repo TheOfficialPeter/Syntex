@@ -10,7 +10,7 @@ window.onload = async function () {
     const finalConnectButton = document.querySelector('.formPopup #button');
     const connectButton = document.getElementsByClassName('infoButton')[0];
     const formPopup = document.getElementsByClassName('formPopup')[0];
-    const profileIcon = document.getElementsByClassName('gamePfp')[0];
+    const gameProfile = document.getElementsByClassName('gameTitle')[0];
     const removeButton = document.getElementsByClassName('removeButton')[0];
 
     if (finalConnectButton) {
@@ -100,6 +100,7 @@ window.onload = async function () {
                 // find roblox game stats using id
                 const response = await fetch(`https://www.roblox.com/games/${robloxID}`);
                 const status = response.status;
+                const body = await response.text();
 
                 if (status == 200) {
                     formTitle.innerText = "Connecting..."
@@ -112,6 +113,18 @@ window.onload = async function () {
                     })
 
                     loading.style.display = "block";
+
+                    // extract information from the website using DOM Parser
+                    const parser = new DOMParser();
+                    const parsed = parser.parseFromString(body, "text/html");
+                    const gameTitle = parsed.querySelector(".game-name").innerText;
+                    const currentPlaying = parsed.querySelector("#about > div.section.game-about-container > div.section-content.remove-panel > ul > li:nth-child(1) > p.text-lead.font-caption-body.wait-for-i18n-format-render").innerText;
+
+                    // set game title to dashboard game title
+                    document.body.querySelector(".gameTitle").innerText = gameTitle;
+
+                    // set game currently playing
+                    document.body.querySelector(".CurrentPlaying").innerText = currentPlaying;
 
                     setTimeout(function () {
                         loading.style.display = "none";
@@ -184,8 +197,8 @@ window.onload = async function () {
         }
     }
 
-    if (profileIcon) {
-        profileIcon.onclick = function () {
+    if (gameProfile) {
+        gameProfile.onclick = function () {
             if (state == 1) {
                 removeButton.style.display = "flex";
                 setTimeout(function () {

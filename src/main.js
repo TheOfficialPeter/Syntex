@@ -1,19 +1,21 @@
 import { createApp } from 'vue'
 import { createRouter, createWebHashHistory } from 'vue-router'
 import App from './App.vue'
+import DashboardView from './components/Dashboard.vue'
 import SettingsView from './Settings.vue'
+import VueApexCharts from "vue3-apexcharts";
 import './index.css'
 
 const routes = [
     {
         path: '/',
-        component: App,
+        component: DashboardView,
         meta: { navID: 1 }
     },
     {
         path: '/Settings',
         component: SettingsView,
-        meta: { navID: 4 }
+        meta: { navID: 5 }
     }
 ]
 
@@ -30,5 +32,6 @@ router.beforeEach((to, from, next) => {
 const app = createApp(App)
 
 app.use(router)
+app.use(VueApexCharts)
 
 app.mount("#app")

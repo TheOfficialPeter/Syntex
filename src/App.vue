@@ -1,5 +1,5 @@
 <template>
-	<NavDrawer></NavDrawer>
+    <NavDrawer></NavDrawer>
     <router-view></router-view>
 </template>
 

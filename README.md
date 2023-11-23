@@ -13,5 +13,5 @@
 ### **Currently under maintenance**
 
 ### Hey psst... Here the current state :eyes:
-Just to make it look like I am doing something
+This is all I am showing as to not ruin the surprise
 ![image](https://github.com/TheOfficialPeter/Syntex/assets/57006688/7a888728-3cfc-4820-9760-6be0e00f5708)

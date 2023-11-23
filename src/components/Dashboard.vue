@@ -6,7 +6,7 @@
 
     <div v-if="pfpBox"
         class="absolute right-10 top-20 h-10 shadow-lg px-5 py-3 rounded-md text-xs font-medium text-red-500 flex justify-center align-middle gap-3 cursor-pointer">
-        Remove this bitch
+        Remove
         <img src="../../public/Remove.svg" alt="Remove Icon">
     </div>
 
@@ -23,10 +23,10 @@
         </div>
     </div>
 
-    <div class="select-none ml-[250px] mt-[20px] shadow-lg w-[350px]">
+    <div class="select-none ml-[250px] mt-[20px] shadow-lg w-[400px]">
         <h1 class="text-md px-5 py-3">Players Over Time</h1>
         <div class="h-[2px] bg-slate-200 rounded-full ml-5 mr-5"></div>
-        <apexchart width="325" type="area" :options="chartOptions" :series="series"></apexchart>
+        <apexchart width="375" type="area" :options="chartOptions" :series="series"></apexchart>
     </div>
 </template>
 
@@ -42,7 +42,7 @@ export default {
             }],
             chartOptions: {
                 chart: {
-                    width: 300,
+                    width: 375,
                     type: 'area',
                     toolbar: {
                         show: false

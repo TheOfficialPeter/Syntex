@@ -1,6 +1,7 @@
 <template>
     <h1 class="absolute left-[250px] text-xl top-10">Overview</h1>
-    <h1 @click="pfpBox = !pfpBox" class="select-none absolute right-16 text-sm top-10 cursor-pointer hover:underline">The cum wars 2</h1>
+    <h1 @click="pfpBox = !pfpBox" class="select-none absolute right-16 text-sm top-10 cursor-pointer hover:underline">{{
+        gameTitle }}</h1>
     <div class="w-2 h-2 bg-green-200 rounded-full absolute right-10 scale-75 top-12"></div>
     <div class="w-2 h-2 bg-green-300 rounded-full absolute right-10 top-12 animate-ping"></div>
 
@@ -35,6 +36,7 @@ export default {
     name: "DashboardView",
     data() {
         return {
+            gameTitle: "",
             pfpBox: false,
             series: [{
                 name: 'series1',
@@ -65,6 +67,24 @@ export default {
                 },
             },
         }
+    },
+    mounted() {
+        fetch('https://www.roblox.com/games/' + localStorage.getItem('robloxGameId')).then(function (response) {
+            response.text().then(function (result) {
+                const parser = new DOMParser();
+                const parsed = parser.parseFromString(result, "text/html");
+
+                const name = parsed.getElementsByClassName('game-name')[0].innerText;
+                console.log(name);
+
+                if (name) {
+                    this.gameTitle = name;
+                }
+                else {
+                    this.gameTitle = '[Invalid Name]';
+                }
+            })
+        })
     }
 }
 </script>

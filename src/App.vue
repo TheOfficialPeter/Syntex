@@ -15,6 +15,14 @@ export default {
         return {
             gameAdded: false
         }
+    },
+    mounted() {
+        if (window.localStorage.getItem('robloxGameId') != null) {
+            this.gameAdded = true;
+        }
+        else if (window.localStorage.getItem('steamGameId') != null) {
+            this.gameAdded = true;
+        }
     }
 }
 </script>

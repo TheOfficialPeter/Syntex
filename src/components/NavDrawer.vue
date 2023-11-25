@@ -10,7 +10,7 @@ export default {
 </script>
 
 <template>
-	<div class="select-none absolute bg-[#19181E] top-0 bottom-0 left-0 w-52">
+	<div class="select-none absolute bg-[#19181E] top-0 bottom-0 left-0 w-52 z-20">
 		<div class="h-10 mx-10 my-10 flex flex-row gap-5 align-middl">
 			<img src="../../public/Logo.svg" alt="">
 			<h1 class="text-lg text-white leading-10">Syntex</h1>

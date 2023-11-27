@@ -25,11 +25,13 @@ export default {
 				</li>
 			</router-link>
 
-			<li id="Tiktok" :style="{ 'background-color': id == 2 ? '#211F29' : 'transparent' }"
-				class="cursor-pointer flex justify-left align-middle rounded-lg py-3 my-2 transition-all hover:scale-110">
-				<img class="mx-3" src="../../public/TikTok.svg" alt="Home Icon">
-				<h1 class="text-gray-300 text-sm font-medium">Tiktok Trends</h1>
-			</li>
+			<router-link to="/Tiktok">
+				<li id="Tiktok" :style="{ 'background-color': id == 2 ? '#211F29' : 'transparent' }"
+					class="cursor-pointer flex justify-left align-middle rounded-lg py-3 my-2 transition-all hover:scale-110">
+					<img class="mx-3" src="../../public/TikTok.svg" alt="Home Icon">
+					<h1 class="text-gray-300 text-sm font-medium">Tiktok Trends</h1>
+				</li>
+			</router-link>
 
 			<li id="Youtube" :style="{ 'background-color': id == 3 ? '#211F29' : 'transparent' }"
 				class="cursor-pointer flex justify-left align-middle rounded-lg py-3 my-2 transition-all hover:scale-110">

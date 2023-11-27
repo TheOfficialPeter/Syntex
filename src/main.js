@@ -2,7 +2,8 @@ import { createApp } from 'vue'
 import { createRouter, createWebHashHistory } from 'vue-router'
 import App from './App.vue'
 import DashboardView from './components/Dashboard.vue'
-import SettingsView from './Settings.vue'
+import SettingsView from './views/Settings.vue'
+import TiktokView from './views/Tiktok.vue'
 import VueApexCharts from "vue3-apexcharts";
 import './index.css'
 
@@ -11,6 +12,11 @@ const routes = [
         path: '/',
         component: DashboardView,
         meta: { navID: 1 }
+    },
+    {
+        path: '/Tiktok',
+        component: TiktokView,
+        meta: { navID: 2 }
     },
     {
         path: '/Settings',

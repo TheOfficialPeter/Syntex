@@ -3,8 +3,7 @@
         :class="[error == true ? 'opacity-1' : 'opacity-0']">
         <h1 class="mt-0 mb-2 mx-3 text-lg font-bold text-white">{{ errorTitle }}</h1>
         <h1 class="p-0 mt-0 ml-3 text-gray-500 text-sm mb-5">{{ errorText }}</h1>
-        <div ref="loading"
-            class="absolute bottom-0 h-2 left-0 w-[0%] bg-gray-500"></div>
+        <div ref="loading" class="absolute bottom-0 h-2 left-0 w-[0%] bg-gray-500"></div>
     </div>
 
     <div v-if="!popupOpen" class="flex flex-col justify-center items-center absolute left-52 top-0 bottom-0 right-0">
@@ -41,8 +40,6 @@ export default {
     {
         async checkForGame() {
             if (this.robloxGameId != "") {
-                console.log('roblox');
-                // check if roblox game exists
                 const response = await fetch('https://www.roblox.com/games/' + this.robloxGameId);
 
                 if (response.status == 200) {
@@ -89,7 +86,48 @@ export default {
             }
             else if (this.steamGameId != "") {
                 console.log('steam');
-                // check if steam game exists
+                const response = await fetch('https://store.steampowered.com/app/' + this.steamGameId);
+                console.log(response);
+
+                if (response.status == 200) {
+                    this.errorTitle = "Game Found";
+                    this.errorText = "Game was found. Adding information...";
+                    this.error = true;
+
+                    const delay = new Promise(resolve => {
+                        setTimeout(resolve, 5000);
+                    });
+
+                    await delay;
+                    this.error = false;
+
+                    this.saveSteam();
+                    window.location.reload();
+                }
+                else {
+                    this.errorTitle = "Not Found";
+                    this.errorText = "ID's provided does not match any games online. Please try a different ID";
+                    this.error = true;
+
+                    const loadingBar = this.$refs.loading;
+                    loadingBar.style.transition = "all linear 5s";
+                    loadingBar.style.width = "100%";
+
+                    // disable loading progress bar on button
+                    this.loading = false;
+
+                    const delay = new Promise(resolve => {
+                        setTimeout(resolve, 5000);
+                    });
+
+                    await delay;
+                    loadingBar.style.transition = "all linear .1s";
+                    loadingBar.style.width = "0%";
+                    loadingBar.style.transition = "all linear .1s";
+                    this.error = false;
+
+                    localStorage.removeItem('steamGameId');
+                }
             }
         },
         saveRoblox() {

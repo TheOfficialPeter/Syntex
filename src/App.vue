@@ -13,7 +13,8 @@ export default {
     components: { NavDrawer, PopupView },
     data() {
         return {
-            gameAdded: false
+            gameAdded: false,
+            checkingReviews: false
         }
     },
     mounted() {

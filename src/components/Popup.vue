@@ -20,10 +20,6 @@
         <h1 class="text-sm font-normal mt-5">Roblox Place ID:</h1>
         <input v-model="robloxGameId" v-on:input="saveRoblox"
             class="text-sm font-normal mt-5 border-2 rounded-md p-3 w-60 border-slate-200 focus:ring-0 focus:outline-2 focus:outline-[#5e5e5e] select-none">
-        <h1 class="text-xl font-medium mt-5">OR</h1>
-        <h1 class="text-sm font-normal mt-5">Steam Game ID:</h1>
-        <input v-model="steamGameId" v-on:input="saveSteam"
-            class="text-sm font-normal mt-5 border-2 rounded-md p-3 w-60 border-slate-200 focus:ring-0 focus:outline-2 focus:outline-[#5e5e5e] select-none">
 
         <div @click="loading = !loading; checkForGame()"
             class="flex items-center jusitfy-center transition-all hover:scale-110 cursor-pointer rounded-full bg-black text-white w-max mt-10 gap-3 px-8 py-3">
@@ -48,7 +44,7 @@ export default {
                     this.error = true;
 
                     const delay = new Promise(resolve => {
-                        setTimeout(resolve, 5000);
+                        setTimeout(resolve, 3000);
                     });
 
                     await delay;
@@ -59,18 +55,18 @@ export default {
                 }
                 else if (response.status == 404) {
                     this.errorTitle = "Not Found";
-                    this.errorText = "ID's provided does not match any games online. Please try a different ID";
+                    this.errorText = "Game with Place ID " + this.robloxGameId + " was not found. Try a different Place ID";
                     this.error = true;
 
                     const loadingBar = this.$refs.loading;
-                    loadingBar.style.transition = "all linear 5s";
+                    loadingBar.style.transition = "all linear 3s";
                     loadingBar.style.width = "100%";
 
                     // disable loading progress bar on button
                     this.loading = false;
 
                     const delay = new Promise(resolve => {
-                        setTimeout(resolve, 5000);
+                        setTimeout(resolve, 3000);
                     });
 
                     await delay;
@@ -84,58 +80,9 @@ export default {
 
                 this.loading = false;
             }
-            else if (this.steamGameId != "") {
-                console.log('steam');
-                const response = await fetch('https://store.steampowered.com/app/' + this.steamGameId);
-                console.log(response);
-
-                if (response.status == 200) {
-                    this.errorTitle = "Game Found";
-                    this.errorText = "Game was found. Adding information...";
-                    this.error = true;
-
-                    const delay = new Promise(resolve => {
-                        setTimeout(resolve, 5000);
-                    });
-
-                    await delay;
-                    this.error = false;
-
-                    this.saveSteam();
-                    window.location.reload();
-                }
-                else {
-                    this.errorTitle = "Not Found";
-                    this.errorText = "ID's provided does not match any games online. Please try a different ID";
-                    this.error = true;
-
-                    const loadingBar = this.$refs.loading;
-                    loadingBar.style.transition = "all linear 5s";
-                    loadingBar.style.width = "100%";
-
-                    // disable loading progress bar on button
-                    this.loading = false;
-
-                    const delay = new Promise(resolve => {
-                        setTimeout(resolve, 5000);
-                    });
-
-                    await delay;
-                    loadingBar.style.transition = "all linear .1s";
-                    loadingBar.style.width = "0%";
-                    loadingBar.style.transition = "all linear .1s";
-                    this.error = false;
-
-                    localStorage.removeItem('steamGameId');
-                }
-            }
         },
         saveRoblox() {
             localStorage.setItem('robloxGameId', this.robloxGameId);
-
-        },
-        saveSteam() {
-            localStorage.setItem('steamGameId', this.steamGameId);
         }
     },
     data() {
@@ -143,7 +90,6 @@ export default {
             popupOpen: false,
             loading: false,
             robloxGameId: '',
-            steamGameId: '',
             error: false,
             errorTitle: "",
             errorText: ""

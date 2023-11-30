@@ -2,9 +2,7 @@ import { createApp } from 'vue'
 import { createRouter, createWebHashHistory } from 'vue-router'
 import App from './App.vue'
 import DashboardView from './components/Dashboard.vue'
-import SettingsView from './views/Settings.vue'
-import TiktokView from './views/Tiktok.vue'
-import VueApexCharts from "vue3-apexcharts";
+import PrimeVue from 'primevue/config';
 import './index.css'
 
 const routes = [
@@ -12,16 +10,6 @@ const routes = [
         path: '/',
         component: DashboardView,
         meta: { navID: 1 }
-    },
-    {
-        path: '/Tiktok',
-        component: TiktokView,
-        meta: { navID: 2 }
-    },
-    {
-        path: '/Settings',
-        component: SettingsView,
-        meta: { navID: 5 }
     }
 ]
 
@@ -38,6 +26,6 @@ router.beforeEach((to, from, next) => {
 const app = createApp(App)
 
 app.use(router)
-app.use(VueApexCharts)
+app.use(PrimeVue);
 
 app.mount("#app")

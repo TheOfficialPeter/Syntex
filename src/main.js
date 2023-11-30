@@ -1,8 +1,9 @@
 import { createApp } from 'vue'
 import { createRouter, createWebHashHistory } from 'vue-router'
 import App from './App.vue'
-import DashboardView from './components/Dashboard.vue'
-import PrimeVue from 'primevue/config';
+import DashboardView from './views/Dashboard.vue'
+import VersionView from './views/Version.vue'
+import IntegrationsView from './views/Integration.vue'
 import './index.css'
 
 const routes = [
@@ -10,6 +11,16 @@ const routes = [
         path: '/',
         component: DashboardView,
         meta: { navID: 1 }
+    },
+    {
+        path: '/version',
+        component: VersionView,
+        meta: { navID: 2 }
+    },
+    {
+        path: '/integration',
+        component: IntegrationsView,
+        meta: { navID: 4}
     }
 ]
 
@@ -26,6 +37,5 @@ router.beforeEach((to, from, next) => {
 const app = createApp(App)
 
 app.use(router)
-app.use(PrimeVue);
 
 app.mount("#app")

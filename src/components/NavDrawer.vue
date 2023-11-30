@@ -16,11 +16,13 @@
 				</li>
 			</router-link>
 
-			<li v-if="gameAdded" id="Versions" :style="{ 'background-color': id == 2 ? '#211F29' : 'transparent' }"
-				class="cursor-pointer flex justify-left align-middle rounded-lg py-3 my-2 transition-all hover:scale-110">
-				<OhVueIcon class="mx-3" name="bi-calendar-fill" fill="white"></OhVueIcon>
-				<h1 class="text-gray-300 text-sm font-medium">Game Versions</h1>
-			</li>
+			<router-link to="/version">
+				<li v-if="gameAdded" id="Versions" :style="{ 'background-color': id == 2 ? '#211F29' : 'transparent' }"
+					class="cursor-pointer flex justify-left align-middle rounded-lg py-3 my-2 transition-all hover:scale-110">
+					<OhVueIcon class="mx-3" name="bi-calendar-fill" fill="white"></OhVueIcon>
+					<h1 class="text-gray-300 text-sm font-medium">Game Versions</h1>
+				</li>
+			</router-link>
 
 			<li v-if="gameAdded" id="Database" :style="{ 'background-color': id == 3 ? '#211F29' : 'transparent' }"
 				class="cursor-pointer flex justify-left align-middle rounded-lg py-3 my-2 transition-all hover:scale-110">
@@ -28,11 +30,13 @@
 				<h1 class="text-gray-300 text-sm font-medium">Database Stats</h1>
 			</li>
 
-			<li v-if="gameAdded" id="Integrations" :style="{ 'background-color': id == 4 ? '#211F29' : 'transparent' }"
-				class="cursor-pointer flex justify-left align-middle rounded-lg py-3 my-2 transition-all hover:scale-110">
-				<OhVueIcon class="mx-3" name="fa-link" fill="white"></OhVueIcon>
-				<h1 class="text-gray-300 text-sm font-medium">Integrations</h1>
-			</li>
+			<router-link to="/integration">
+				<li v-if="gameAdded" id="Integrations" :style="{ 'background-color': id == 4 ? '#211F29' : 'transparent' }"
+					class="cursor-pointer flex justify-left align-middle rounded-lg py-3 my-2 transition-all hover:scale-110">
+					<OhVueIcon class="mx-3" name="fa-link" fill="white"></OhVueIcon>
+					<h1 class="text-gray-300 text-sm font-medium">Integrations</h1>
+				</li>
+			</router-link>
 
 			<li v-if="gameAdded" @click="remove()" id="Remove" :style="{ 'background-color': id == 5 ? '#211F29' : 'transparent' }"
 				class="cursor-pointer flex justify-left align-middle rounded-lg py-3 my-2 transition-all hover:scale-110">

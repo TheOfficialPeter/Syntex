@@ -24,11 +24,13 @@
 				</li>
 			</router-link>
 
-			<li v-if="gameAdded" id="Database" :style="{ 'background-color': id == 3 ? '#211F29' : 'transparent' }"
-				class="cursor-pointer flex justify-left align-middle rounded-lg py-3 my-2 transition-all hover:scale-110">
-				<OhVueIcon class="mx-3" name="hi-solid-database" fill="white"></OhVueIcon>
-				<h1 class="text-gray-300 text-sm font-medium">Database Stats</h1>
-			</li>
+			<router-link to="/database">
+				<li v-if="gameAdded" id="Database" :style="{ 'background-color': id == 3 ? '#211F29' : 'transparent' }"
+					class="cursor-pointer flex justify-left align-middle rounded-lg py-3 my-2 transition-all hover:scale-110">
+					<OhVueIcon class="mx-3" name="hi-solid-database" fill="white"></OhVueIcon>
+					<h1 class="text-gray-300 text-sm font-medium">Database Stats</h1>
+				</li>
+			</router-link>
 
 			<router-link to="/integration">
 				<li v-if="gameAdded" id="Integrations" :style="{ 'background-color': id == 4 ? '#211F29' : 'transparent' }"

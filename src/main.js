@@ -4,6 +4,7 @@ import App from './App.vue'
 import DashboardView from './views/Dashboard.vue'
 import VersionView from './views/Version.vue'
 import IntegrationsView from './views/Integration.vue'
+import DatabaseView from './views/Database.vue'
 import './index.css'
 
 const routes = [
@@ -16,6 +17,11 @@ const routes = [
         path: '/version',
         component: VersionView,
         meta: { navID: 2 }
+    },
+    {
+        path: '/database',
+        component: DatabaseView,
+        meta: { navID: 3 }
     },
     {
         path: '/integration',

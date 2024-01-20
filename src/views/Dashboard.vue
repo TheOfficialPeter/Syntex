@@ -6,6 +6,7 @@
         <h1 v-if="loaded" @click="pfpBox = !pfpBox"
             class="select-none absolute right-16 text-smc cursor-pointer hover:underline">{{
                 gameTitle }}</h1>
+        <h1 v-if="loaded" class="select-none absolute right-16 top-[25px] text-[10px] text-gray-400 cursor-pointer tracking-[1px] font-[400]">Last Updated: {{ lastUpdated }}</h1>
         <div v-if="loaded" class="w-2 h-2 bg-green-200 rounded-full absolute right-10 scale-75"></div>
         <div v-if="loaded" class="w-2 h-2 bg-green-300 rounded-full absolute right-10 animate-ping"></div>
     </div>
